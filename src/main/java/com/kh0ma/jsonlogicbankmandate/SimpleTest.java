@@ -6,10 +6,6 @@ import java.util.List;
 import org.apache.commons.lang3.tuple.Pair;
 import org.paukov.combinatorics3.Generator;
 
-/**
- * @author <a href="mailto:okhome@softserveinc.com">Oleksandr Khomenko</a>
- * <br>
- */
 public class SimpleTest {
 
     public static void main(String[] args) {
