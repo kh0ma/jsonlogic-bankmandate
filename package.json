@@ -1,0 +1,7 @@
+{
+  "name": "jsonlogic-bankmandate",
+  "version": "1.0.0",
+  "dependencies": {
+    "js-to-json-logic": "^0.1.3"
+  }
+}

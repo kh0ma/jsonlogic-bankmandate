@@ -1,13 +1,18 @@
-package com.kh0ma.jsonlogicbankmandate;
+package com.kh0ma.jsonlogicbankmandate.garbage;
 
 import java.util.List;
 
 import io.github.jamsesso.jsonlogic.JsonLogic;
+//import io.github.meiskalt7.jsonlogic.JsonLogic;
+import com.fasterxml.jackson.databind.ObjectMapper;
+//import eu.afse.jsonlogic.JsonLogic;
 import lombok.SneakyThrows;
 import org.apache.commons.lang3.tuple.Pair;
 import org.paukov.combinatorics3.Generator;
 
 public class JsonLogicTest {
+
+    public static final ObjectMapper objectMapper = new ObjectMapper();
 
     public static final String JSON_LOGIC = """
             {
@@ -99,6 +104,8 @@ public class JsonLogicTest {
     private static boolean test1(List<String> approvals) {
         JsonLogic jsonLogic = new JsonLogic();
 
-        return (boolean) jsonLogic.apply(JSON_LOGIC, approvals);
+        var json = objectMapper.writeValueAsString(approvals);
+
+        return (boolean) jsonLogic.apply(JSON_LOGIC, json);
     }
 }

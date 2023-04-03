@@ -1,4 +1,4 @@
-package com.kh0ma.jsonlogicbankmandate;
+package com.kh0ma.jsonlogicbankmandate.garbage;
 
 import java.util.ArrayList;
 import java.util.List;
