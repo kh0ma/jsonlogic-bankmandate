@@ -1,9 +1,7 @@
 package com.kh0ma.jsonlogicbankmandate.mvp.dto;
 
 import java.util.Arrays;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 public class ApprovalBuilder {
     private String individualId;
@@ -26,10 +24,10 @@ public class ApprovalBuilder {
         return new ApprovalBuilder(individualId, Arrays.asList(groups));
     }
 
-    public Map build() {
-        var result = new HashMap<>();
-        result.put("userId", this.individualId);
-        result.put("assignedGroups", this.assignedGroups);
-        return result;
+    public ApprovalDto build() {
+        return ApprovalDto.builder()
+                .userId(this.individualId)
+                .assignedGroups(this.assignedGroups.toArray(new String[] {}))
+                .build();
     }
 }
