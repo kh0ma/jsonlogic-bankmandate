@@ -26,7 +26,6 @@ public class PlaygroundMain {
                 List.of(
                         ApprovalBuilder.of(List.of("A", "B")).build(),
                         ApprovalBuilder.of(List.of("C")).build())
-
         );
 
         log.info("Result of validation. result={}", result);

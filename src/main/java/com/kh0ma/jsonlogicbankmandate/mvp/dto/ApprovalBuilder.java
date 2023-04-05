@@ -28,7 +28,7 @@ public class ApprovalBuilder {
 
     public Map build() {
         var result = new HashMap<>();
-        result.put("individualId", this.individualId);
+        result.put("userId", this.individualId);
         result.put("assignedGroups", this.assignedGroups);
         return result;
     }
