@@ -1,6 +1,7 @@
 package com.kh0ma.jsonlogicbankmandate.mvp;
 
 import java.util.List;
+import java.util.Map;
 import java.util.stream.Stream;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -27,7 +28,7 @@ public class JsonLogicFlowRequirementVerifier {
 
 
     @SneakyThrows
-    public static boolean verify(FlowRequirementDto flowRequirementDto, List<ApprovalDto> approvals) {
+    public static boolean verify(FlowRequirementDto flowRequirementDto, List<Map> approvals) {
 
         var jsonLogicString = objectMapper.writeValueAsString(flowRequirementDto.getJsonLogic());
 
@@ -37,7 +38,7 @@ public class JsonLogicFlowRequirementVerifier {
     }
 
     @SneakyThrows
-    private static boolean verifyInternal(String jsonLogicString, List<ApprovalDto> approvalCombination) {
+    private static boolean verifyInternal(String jsonLogicString, List<Map> approvalCombination) {
         return (boolean) JSON_LOGIC.apply(jsonLogicString, approvalCombination);
     }
 }
